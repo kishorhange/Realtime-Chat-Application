@@ -1,0 +1,170 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Chat Application Using Node JS</title>
+    <script defer src="http://localhost:8000/socket.io/socket.io.js"></script>
+    <script defer src="/client.js"></script>
+</head>
+<style>
+    * {
+        margin: 0;
+        padding: 0;
+    }
+
+    html {
+        font-size: 16px;
+    }
+
+    nav {
+        margin-top: 1rem;
+        display: flex;
+        width: 100%;
+    }
+
+    @font-face {
+        font-family: Font;
+        src: url(Ubuntu-Light.ttf);
+    }
+
+    #bot {
+        font-family: Font;
+        font-size: 2rem;
+        margin-left: 1rem;
+    }
+
+    #app {
+        margin-left: 2rem;
+        width: 3%;
+        height: 3%;
+    }
+
+    #line {
+        height: 5px;
+        background-color: #0275d8;
+        opacity: 0.3;
+        margin: 0.5rem 2rem;
+    }
+
+    #main {
+        background: rgb(26, 29, 33);
+        width: 70%;
+        margin: auto;
+        border-radius: 4px;
+        display: block;
+        height: 80vh;
+    }
+
+    .heading_secondary {
+        font-family: Font;
+        font-weight: 600;
+        font-size: 1.5rem;
+        color: #fff;
+        display: flex;
+        justify-content: center;
+        padding-top: 0.4rem;
+    }
+
+    .msg {
+        width: 60vh;
+        font-family: Font;
+        margin: 0.65rem;
+        border-radius: 4px;
+        padding: 4px;
+    }
+
+    .start {
+        float: right;
+        color: #fff;
+        clear: both;
+        background-color: #3787e5;
+    }
+
+    .end {
+        float: left;
+        color: #a7a6a8;
+        clear: both;
+        background-color: #434547;
+    }
+
+    #conversation {
+        background: rgb(26, 29, 33);
+        height: 100%;
+        overflow: auto;
+
+    }
+
+    .middle {
+        display: block;
+        margin: auto;
+        clear: both;
+        text-align: center;
+        font-family: Font;
+        color: #fff;
+    }
+
+    #btn_snd {
+        width: 100%;
+    }
+
+    #btn {
+        float: right;
+        width: 9%;
+        padding: 0.8rem;
+        margin-right: 0.8rem;
+        font-size: large;
+        font-family: Font;
+        font-weight: 800;
+        background-color: #0275d8;
+        border: none;
+        border-radius: 4px;
+        color: white;
+    }
+
+    #text {
+        margin: 0 0.4rem;
+        font-size: larger;
+        font-family: Font;
+    }
+
+    #snd {
+        width: 100%;
+    }
+
+    .messnd {
+        background-color: rgb(26, 29, 33);
+        width: 100%;
+    }
+</style>
+
+<body>
+    <nav>
+        <img src="Icon.png" alt="" id="app">
+        <h1 id="bot">Chat App</h1>
+    </nav>
+    <hr id="line">
+    <div id="main">
+        <div class="heading_secondary">Your Chat</div>
+        <div id="conversation">
+            <!-- <div class="middle">Kishor Joined</div>
+            <div class="start msg">Kishor Hi</div>
+            <div class="end msg">KSH21 Hello</div>
+            <div class="middle">Kishor Left</div> -->
+        </div>
+        <div class="messnd">
+            <form action="" method="post" id="snd">
+                <textarea name="text" id="text" cols="78" rows="2" placeholder="Type Here Something"></textarea>
+                <button id="btn">Send</button>
+            </form>
+        </div>
+    </div>
+</body>
+<script>
+    let element = document.getElementById('conversation')
+    element.scrollTop = element.scrollHeight
+</script>
+
+</html>
